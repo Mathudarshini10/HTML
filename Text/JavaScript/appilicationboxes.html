@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Result Checker</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            background: white;
+            width: 350px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #result {
+            margin-top: 20px;
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Student Result Checker</h2>
+
+    <p>Click below to check your result</p>
+
+    <button onclick="checkResult()">Check Result</button>
+
+    <p id="result"></p>
+
+</div>
+
+
+<script>
+
+function checkResult() {
+
+    // Alert Box
+    alert("Welcome to Student Result Checking System!");
+
+    // Confirm Box
+    let confirmCheck = confirm("Do you want to check your result?");
+
+    if (confirmCheck) {
+
+        // Prompt Box
+        let rollNo = prompt("Enter your Roll Number:");
+
+        if (rollNo != null && rollNo != "") {
+
+            document.getElementById("result").innerHTML =
+            "Result Found!<br>" +
+            "Roll Number: " + rollNo +
+            "<br>Marks: 85/100" +
+            "<br>Status: PASS";
+
+        } 
+        else {
+
+            document.getElementById("result").innerHTML =
+            "Please enter a valid Roll Number.";
+
+        }
+
+    } 
+    else {
+
+        document.getElementById("result").innerHTML =
+        "Result checking cancelled.";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
